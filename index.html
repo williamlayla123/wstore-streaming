@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#080810">
+<title>WStore Streaming</title>
+<style>
+:root {
+  --fundo:#080810;
+  --card:#12121e;
+  --roxo:#b42cff;
+  --azul:#168cff;
+  --prata:#e7e7f0;
+  --texto:#f8f8ff;
+  --suave:#aaaac0;
+}
+*{box-sizing:border-box}
+body{
+  margin:0;background:var(--fundo);color:var(--texto);
+  font-family:Arial,Helvetica,sans-serif
+}
+header{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:18px 16px;border-bottom:1px solid #29283c;
+  background:#090911;position:sticky;top:0;z-index:5
+}
+.logo{font-size:23px;font-weight:900;letter-spacing:1px}
+.logo b{color:var(--roxo)}
+.logo small{display:block;font-size:9px;letter-spacing:5px;
+color:var(--azul);margin-top:3px}
+.status{font-size:11px;color:#66f0a0}
+main{max-width:1100px;margin:auto;padding:20px 15px}
+h1{font-size:27px;margin-bottom:8px}
+h2{font-size:19px;margin:26px 0 13px}
+p{color:var(--suave);line-height:1.5}
+.hero{
+  padding:25px 20px;border:1px solid #593078;border-radius:17px;
+  background:linear-gradient(125deg,#301044,#121b3a 70%,#10101a);
+  box-shadow:0 0 25px #7314a51a
+}
+.hero strong{color:#d7b5ff}
+button{
+  color:white;border:1px solid #51406e;border-radius:10px;
+  padding:12px;background:#191627;font-weight:bold;cursor:pointer
+}
+.primary{
+  background:linear-gradient(100deg,var(--roxo),var(--azul));
+  border:0
+}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}
+.card{
+  padding:15px;background:var(--card);border:1px solid #29283e;
+  border-radius:13px;min-width:0
+}
+.label{font-size:12px;color:var(--suave)}
+.number{font-size:22px;font-weight:bold;margin-top:9px}
+.menu{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.menu button{text-align:left;min-height:76px;line-height:1.5}
+.menu button span{display:block;color:#b9a0ff;font-size:12px}
+.service{border-left:3px solid var(--azul)}
+.notice{
+  padding:13px;border-radius:10px;background:#101a2a;
+  border:1px solid #23405f;font-size:13px;color:#c7ddff
+}
+footer{text-align:center;padding:24px;color:var(--suave);font-size:12px}
+@media(min-width:700px){
+  .grid{grid-template-columns:repeat(4,minmax(0,1fr))}
+  .menu{grid-template-columns:repeat(3,minmax(0,1fr))}
+  h1{font-size:34px}
+}
+</style>
+</head>
+<body>
+<header>
+  <div class="logo">W<b>STORE</b><small>STREAMING</small></div>
+  <div class="status">● EM DESENVOLVIMENTO</div>
+</header>
+
+<main>
+  <h1>Painel WStore</h1>
+  <p>Sua loja. Sua marca. Seu negócio.</p>
+
+  <section class="hero">
+    <p><strong>WSTORE STREAMING</strong></p>
+    <h2>Bem-vindo ao seu painel</h2>
+    <p>Uma nova experiência para administrar sua operação,
+    organizar revendedores e acompanhar seu negócio.</p>
+    <button class="primary" onclick="aviso('Visão geral')">
+      Explorar painel
+    </button>
+  </section>
+
+  <h2>Resumo da operação</h2>
+  <section class="grid">
+    <div class="card">
+      <div class="label">Clientes</div>
+      <div class="number">—</div>
+      <p>Aguardando integração</p>
+    </div>
+    <div class="card">
+      <div class="label">Revendedores</div>
+      <div class="number">—</div>
+      <p>Aguardando cadastro</p>
+    </div>
+    <div class="card">
+      <div class="label">Créditos</div>
+      <div class="number">—</div>
+      <p>Saldo não configurado</p>
+    </div>
+    <div class="card">
+      <div class="label">Integrações</div>
+      <div class="number">0</div>
+      <p>Não conectadas</p>
+    </div>
+  </section>
+
+  <h2>Administração</h2>
+  <section class="menu">
+    <button onclick="aviso('Clientes')">
+      👥 Clientes <span>Cadastro e consulta</span>
+    </button>
+    <button onclick="aviso('Revendedores')">
+      🧩 Revendedores <span>Níveis e permissões</span>
+    </button>
+    <button onclick="aviso('Créditos')">
+      💳 Créditos <span>Saldo e movimentações</span>
+    </button>
+    <button onclick="aviso('Mensalidades')">
+      📅 Mensalidades <span>Planos e vencimentos</span>
+    </button>
+    <button onclick="aviso('Relatórios')">
+      📊 Relatórios <span>Vendas e atividades</span>
+    </button>
+    <button onclick="aviso('Assistente de IA')">
+      ✨ Assistente IA <span>Ajuda administrativa</span>
+    </button>
+    <button onclick="aviso('WhatsApp')">
+      💬 WhatsApp <span>Atendimento ao cliente</span>
+    </button>
+    <button onclick="aviso('Configurações')">
+      ⚙️ Configurações <span>Preferências da loja</span>
+    </button>
+  </section>
+
+  <h2>Integrações previstas</h2>
+  <section class="grid">
+    <div class="card service">
+      <strong>Nextplay</strong>
+      <p>Conexão a verificar</p>
+    </div>
+    <div class="card service">
+      <strong>Spartanplay</strong>
+      <p>API a verificar</p>
+    </div>
+    <div class="card service">
+      <strong>AtiveApp</strong>
+      <p>Integração a verificar</p>
+    </div>
+    <div class="card service">
+      <strong>WhatsApp</strong>
+      <p>Configuração futura</p>
+    </div>
+  </section>
+
+  <h2>Próximas etapas</h2>
+  <div class="notice">
+    Esta é a primeira versão visual. Login seguro, banco de dados,
+    hierarquia de revendedores, créditos, mensalidades e integrações
+    reais serão desenvolvidos e testados nas próximas etapas.
+    Não utilize dados reais neste protótipo.
+  </div>
+</main>
+
+<footer>WStore Streaming · Sua loja, do seu jeito.</footer>
+
+<script>
+function aviso(nome){
+  alert(nome + ': módulo ainda em desenvolvimento.');
+}
+</script>
+</body>
+</html>
