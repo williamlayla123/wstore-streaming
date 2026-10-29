@@ -1,183 +1,88 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#080810">
-<title>WStore Streaming</title>
-  <style>
-:root {
-  --fundo:#080810;
-  --card:#12121e;
-  --roxo:#b42cff;
-  --azul:#168cff;
-  --prata:#e7e7f0;
-  --texto:#f8f8ff;
-  --suave:#aaaac0;
-}
-*{box-sizing:border-box}
-body{
-  margin:0;background:var(--fundo);color:var(--texto);
-  font-family:Arial,Helvetica,sans-serif
-}
-header{
-  display:flex;align-items:center;justify-content:space-between;
-  padding:18px 16px;border-bottom:1px solid #29283c;
-  background:#090911;position:sticky;top:0;z-index:5
-}
-.logo{font-size:23px;font-weight:900;letter-spacing:1px}
-.logo b{color:var(--roxo)}
-.logo small{display:block;font-size:9px;letter-spacing:5px;
-color:var(--azul);margin-top:3px}
-.status{font-size:11px;color:#66f0a0}
-main{max-width:1100px;margin:auto;padding:20px 15px}
-h1{font-size:27px;margin-bottom:8px}
-h2{font-size:19px;margin:26px 0 13px}
-p{color:var(--suave);line-height:1.5}
-.hero{
-  padding:25px 20px;border:1px solid #593078;border-radius:17px;
-  background:linear-gradient(125deg,#301044,#121b3a 70%,#10101a);
-  box-shadow:0 0 25px #7314a51a
-}
-.hero strong{color:#d7b5ff}
-button{
-  color:white;border:1px solid #51406e;border-radius:10px;
-  padding:12px;background:#191627;font-weight:bold;cursor:pointer
-}
-.primary{
-  background:linear-gradient(100deg,var(--roxo),var(--azul));
-  border:0
-}
-.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}
-.card{
-  padding:15px;background:var(--card);border:1px solid #29283e;
-  border-radius:13px;min-width:0
-}
-.label{font-size:12px;color:var(--suave)}
-.number{font-size:22px;font-weight:bold;margin-top:9px}
-.menu{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
-.menu button{text-align:left;min-height:76px;line-height:1.5}
-.menu button span{display:block;color:#b9a0ff;font-size:12px}
-.service{border-left:3px solid var(--azul)}
-.notice{
-  padding:13px;border-radius:10px;background:#101a2a;
-  border:1px solid #23405f;font-size:13px;color:#c7ddff
-}
-footer{text-align:center;padding:24px;color:var(--suave);font-size:12px}
-@media(min-width:700px){
-  .grid{grid-template-columns:repeat(4,minmax(0,1fr))}
-  .menu{grid-template-columns:repeat(3,minmax(0,1fr))}
-  h1{font-size:34px}
-}
-</style>
-</head>
-<body>
-<header>
-  <div class="logo">W<b>STORE</b><small>STREAMING</small></div>
-  <div class="status">● EM DESENVOLVIMENTO</div>
-</header>
-
-<main>
-  <h1>Painel WStore</h1>
-  <p>Sua loja. Sua marca. Seu negócio.</p>
-
-  <section class="hero">
-    <p><strong>WSTORE STREAMING</strong></p>
-    <h2>Bem-vindo ao seu painel</h2>
-    <p>Uma nova experiência para administrar sua operação,
-    organizar revendedores e acompanhar seu negócio.</p>
-    <button class="primary" onclick="aviso('Visão geral')">
-      Explorar painel
-    </button>
-  </section>
-
-  <h2>Resumo da operação</h2>
-  <section class="grid">
-    <div class="card">
-      <div class="label">Clientes</div>
-      <div class="number">—</div>
-      <p>Aguardando integração</p>
-    </div>
-    <div class="card">
-      <div class="label">Revendedores</div>
-      <div class="number">—</div>
-      <p>Aguardando cadastro</p>
-    </div>
-    <div class="card">
-      <div class="label">Créditos</div>
-      <div class="number">—</div>
-      <p>Saldo não configurado</p>
-    </div>
-    <div class="card">
-      <div class="label">Integrações</div>
-      <div class="number">0</div>
-      <p>Não conectadas</p>
-    </div>
-  </section>
-
-  <h2>Administração</h2>
-  <section class="menu">
-    <button onclick="aviso('Clientes')">
-      👥 Clientes <span>Cadastro e consulta</span>
-    </button>
-    <button onclick="aviso('Revendedores')">
-      🧩 Revendedores <span>Níveis e permissões</span>
-    </button>
-    <button onclick="aviso('Créditos')">
-      💳 Créditos <span>Saldo e movimentações</span>
-    </button>
-    <button onclick="aviso('Mensalidades')">
-      📅 Mensalidades <span>Planos e vencimentos</span>
-    </button>
-    <button onclick="aviso('Relatórios')">
-      📊 Relatórios <span>Vendas e atividades</span>
-    </button>
-    <button onclick="aviso('Assistente de IA')">
-      ✨ Assistente IA <span>Ajuda administrativa</span>
-    </button>
-    <button onclick="aviso('WhatsApp')">
-      💬 WhatsApp <span>Atendimento ao cliente</span>
-    </button>
-    <button onclick="aviso('Configurações')">
-      ⚙️ Configurações <span>Preferências da loja</span>
-    </button>
-  </section>
-
-  <h2>Integrações previstas</h2>
-  <section class="grid">
-    <div class="card service">
-      <strong>Nextplay</strong>
-      <p>Conexão a verificar</p>
-    </div>
-    <div class="card service">
-      <strong>Spartanplay</strong>
-      <p>API a verificar</p>
-    </div>
-    <div class="card service">
-      <strong>AtiveApp</strong>
-      <p>Integração a verificar</p>
-    </div>
-    <div class="card service">
-      <strong>WhatsApp</strong>
-      <p>Configuração futura</p>
-    </div>
-  </section>
-
-  <h2>Próximas etapas</h2>
-  <div class="notice">
-    Esta é a primeira versão visual. Login seguro, banco de dados,
-    hierarquia de revendedores, créditos, mensalidades e integrações
-    reais serão desenvolvidos e testados nas próximas etapas.
-    Não utilize dados reais neste protótipo.
-  </div>
-</main>
-
-<footer>WStore Streaming · Sua loja, do seu jeito.</footer>
-
+<html lang="pt-BR"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#080810">
+<title>WStore Painel</title>
+<style>
+:root{--bg:#080810;--card:#12121e;--roxo:#b42cff;--azul:#168cff;--txt:#f8f8ff;--suave:#aaaac0;--linha:#29283e;--ok:#4be39a;--ruim:#ff6b7a;--aviso:#ffc857}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--txt);font:15px/1.45 Arial,Helvetica,sans-serif}
+header{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:14px 16px;border-bottom:1px solid var(--linha);background:#090911;position:sticky;top:0;z-index:5}
+.logo{font-size:21px;font-weight:900}.logo b{color:var(--roxo)}.who{font-size:13px;color:var(--suave);text-align:right}
+main{max-width:1100px;margin:auto;padding:16px 14px 50px}h2{font-size:20px;margin:6px 0 14px}
+nav{display:flex;gap:6px;overflow-x:auto;padding:12px 14px 0;max-width:1100px;margin:auto}
+nav button{flex:none;background:var(--card);border:1px solid var(--linha);color:var(--txt);padding:9px 14px;border-radius:999px;font:inherit;cursor:pointer}
+nav button.on{background:linear-gradient(100deg,var(--roxo),var(--azul));border:0;font-weight:bold}
+button,.btn{font:inherit;color:#fff;border:1px solid #51406e;background:#191627;border-radius:9px;padding:9px 12px;cursor:pointer;text-decoration:none;display:inline-block}
+button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid var(--azul);outline-offset:2px}
+.pri{background:linear-gradient(100deg,var(--roxo),var(--azul));border:0;font-weight:bold}.sm{padding:6px 9px;font-size:13px}.pe{color:var(--ruim)}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-bottom:16px}@media(min-width:700px){.grid{grid-template-columns:repeat(4,1fr)}}
+.card{background:var(--card);border:1px solid var(--linha);border-radius:13px;padding:14px;min-width:0}.card small{color:var(--suave)}.card b{display:block;font-size:26px;margin-top:6px}
+.bar{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px}.bar input,.bar select{flex:1 1 150px}
+input,select,textarea{width:100%;background:#0c0c16;color:var(--txt);border:1px solid var(--linha);border-radius:9px;padding:10px;font:inherit}
+.tw{overflow-x:auto}table{width:100%;border-collapse:collapse;min-width:640px;font-size:14px}th,td{text-align:left;padding:10px 8px;border-bottom:1px solid var(--linha);vertical-align:middle}th{color:var(--suave);font-weight:600;font-size:12.5px}
+.tag{padding:2px 9px;border-radius:99px;font-size:12px;font-weight:bold;white-space:nowrap}.t1{background:#12372a;color:var(--ok)}.t2{background:#3d3210;color:var(--aviso)}.t3{background:#3d1620;color:var(--ruim)}
+.acoes{display:flex;gap:5px;flex-wrap:wrap}.vazio{color:var(--suave);padding:22px;text-align:center}
+dialog{background:var(--card);color:var(--txt);border:1px solid var(--linha);border-radius:14px;width:min(440px,94vw);padding:18px}dialog::backdrop{background:#000a}
+label{display:block;font-size:13px;color:var(--suave);margin:10px 0 4px}.err{color:var(--ruim);min-height:20px;font-size:13px}.rod{display:flex;gap:8px;justify-content:flex-end;margin-top:12px}
+#login{max-width:360px;margin:12vh auto;padding:0 16px}.msg{position:fixed;bottom:16px;left:50%;transform:translateX(-50%);background:#1d2a3d;border:1px solid #23405f;padding:10px 16px;border-radius:10px;z-index:9}
+</style></head><body>
+<div id="login" hidden><div class="logo" style="font-size:30px;text-align:center;margin-bottom:18px">W<b>STORE</b></div>
+<div class="card"><label for="lu">Usuário</label><input id="lu" autocomplete="username"><label for="lp">Senha</label><input id="lp" type="password" autocomplete="current-password">
+<p class="err" id="le"></p><button class="pri" id="lb" style="width:100%">Entrar</button></div></div>
+<div id="app" hidden><header><div class="logo">W<b>STORE</b></div><div class="who"><span id="wu"></span><br><span id="wc"></span> · <a href="#" id="so" style="color:var(--azul)">Sair</a></div></header>
+<nav id="nav"></nav><main id="view"></main></div>
+<dialog id="dlg"><form id="f"></form></dialog>
 <script>
-function aviso(nome){
-  alert(nome + ': módulo ainda em desenvolvimento.');
-}
-</script>
-</body>
-</html>
+const $=s=>document.querySelector(s),esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+let me=null,tab="resumo",cache={};
+const api=async(m,u,b)=>{const r=await fetch("/api"+u,{method:m,headers:{"Content-Type":"application/json"},body:b?JSON.stringify(b):undefined});
+ const j=await r.json().catch(()=>({}));if(!r.ok){if(r.status===401&&u!=="/login"&&me){me=null;boot()}throw new Error(j.erro||"Erro")}return j};
+const toast=t=>{const d=document.createElement("div");d.className="msg";d.textContent=t;document.body.append(d);setTimeout(()=>d.remove(),2800)};
+const fdata=d=>d?d.split("-").reverse().join("/"):"";
+const hoje=()=>new Date(Date.now()-3*36e5).toISOString().slice(0,10);
+const dias=v=>Math.round((new Date(v)-new Date(hoje()))/864e5);
+const status=v=>{const d=dias(v);return d<0?['<span class="tag t3">Vencido há '+(-d)+'d</span>',3]:d<=7?['<span class="tag t2">Vence em '+d+'d</span>',2]:['<span class="tag t1">Ativo</span>',1]};
+function form(titulo,campos,ok,cb){const f=$("#f");
+ f.innerHTML=`<h2>${esc(titulo)}</h2>`+campos.map(c=>`<label for="c_${c.n}">${esc(c.l)}</label>`+(c.opts?`<select id="c_${c.n}" name="${c.n}">${c.opts.map(o=>`<option value="${o[0]}"${o[0]==c.v?" selected":""}>${esc(o[1])}</option>`).join("")}</select>`:
+ c.area?`<textarea id="c_${c.n}" name="${c.n}" rows="2">${esc(c.v)}</textarea>`:`<input id="c_${c.n}" name="${c.n}" type="${c.t||"text"}" value="${esc(c.v)}" autocomplete="off">`)).join("")+
+ `<p class="err" id="fe"></p><div class="rod"><button type="button" id="fc">Cancelar</button><button class="pri">${esc(ok)}</button></div>`;
+ $("#fc").onclick=()=>$("#dlg").close();
+ f.onsubmit=async e=>{e.preventDefault();try{await cb(Object.fromEntries(new FormData(f)));$("#dlg").close();render()}catch(x){$("#fe").textContent=x.message}};
+ $("#dlg").showModal();}
+const PL=[[1,"1 mês · 1 crédito"],[3,"3 meses · 3 créditos"],[6,"6 meses · 6 créditos"],[12,"12 meses · 12 créditos"]];
+async function boot(){try{me=await api("GET","/me")}catch{me=null}
+ $("#login").hidden=!!me;$("#app").hidden=!me;if(!me)return;
+ const t=[["resumo","Resumo"],["clientes","Clientes"]];if(me.papel==="admin")t.push(["rev","Revendedores"]);t.push(["mov","Créditos"],["conta","Conta"]);
+ $("#nav").innerHTML=t.map(x=>`<button data-t="${x[0]}">${x[1]}</button>`).join("");
+ $("#nav").onclick=e=>{if(e.target.dataset.t){tab=e.target.dataset.t;render()}};render()}
+async function render(){document.querySelectorAll("#nav button").forEach(b=>b.classList.toggle("on",b.dataset.t===tab));
+ try{me=await api("GET","/me");$("#wu").textContent=me.usuario+(me.papel==="admin"?" (admin)":"");$("#wc").textContent=me.papel==="admin"?"Acesso total":me.creditos+" créditos";
+  await V[tab]()}catch(e){$("#view").innerHTML=`<p class="err">${esc(e.message)}</p>`}}
+const V={
+async resumo(){const r=await api("GET","/resumo"),k=(l,v)=>`<div class="card"><small>${l}</small><b>${v}</b></div>`;
+ $("#view").innerHTML=`<h2>Resumo da operação</h2><div class="grid">${k("Clientes",r.clientes)}${k("Ativos",r.ativos)}${k("Vencem em 7 dias",r.vencem7)}${k("Vencidos",r.vencidos)}${me.papel==="admin"?k("Revendedores",r.revendedores):""}${k(me.papel==="admin"?"Créditos com revendedores":"Meus créditos",r.creditos)}</div>
+ <div class="card"><small>Atalho</small><p>${r.vencidos+r.vencem7?`Há <b style="display:inline;font-size:inherit">${r.vencidos+r.vencem7}</b> cliente(s) para cobrar. Abra <a href="#" id="go" style="color:var(--azul)">Clientes</a> e use o botão WhatsApp.`:"Nenhuma cobrança pendente agora."}</p></div>`;
+ const g=$("#go");if(g)g.onclick=e=>{e.preventDefault();tab="clientes";render()}},
+async clientes(){cache.cl=await api("GET","/clientes");$("#view").innerHTML=`<h2>Clientes</h2><div class="bar"><input id="q" placeholder="Buscar nome, WhatsApp ou usuário"><select id="fs"><option value="0">Todos</option><option value="1">Ativos</option><option value="2">Vencem em 7 dias</option><option value="3">Vencidos</option></select><button class="pri" id="nc">+ Novo cliente</button></div><div class="tw" id="tb"></div>`;
+ $("#q").oninput=$("#fs").onchange=lista;$("#nc").onclick=()=>form("Novo cliente",[{n:"nome",l:"Nome"},{n:"whatsapp",l:"WhatsApp (com DDD)",t:"tel"},{n:"usuario_servico",l:"Usuário do serviço"},{n:"meses",l:"Plano",opts:PL},{n:"obs",l:"Observação",area:1}],"Cadastrar",async d=>{await api("POST","/clientes",d);toast("Cliente cadastrado")});lista()}
+,async rev(){const l=await api("GET","/revendedores");$("#view").innerHTML=`<h2>Revendedores</h2><div class="bar"><button class="pri" id="nr">+ Novo revendedor</button></div><div class="tw">${l.length?`<table><tr><th>Usuário</th><th>Créditos</th><th>Clientes</th><th>Situação</th><th></th></tr>${l.map(r=>`<tr><td>${esc(r.usuario)}</td><td>${r.creditos}</td><td>${r.clientes}</td><td>${r.ativo?'<span class="tag t1">Ativo</span>':'<span class="tag t3">Bloqueado</span>'}</td><td class="acoes"><button class="sm" data-a="cr" data-i="${r.id}">± Créditos</button><button class="sm" data-a="pw" data-i="${r.id}">Senha</button><button class="sm pe" data-a="at" data-i="${r.id}" data-v="${r.ativo}">${r.ativo?"Bloquear":"Reativar"}</button></td></tr>`).join("")}</table>`:'<p class="vazio">Nenhum revendedor ainda.</p>'}</div>`;
+ $("#nr").onclick=()=>form("Novo revendedor",[{n:"usuario",l:"Usuário"},{n:"senha",l:"Senha (mínimo 8 caracteres)",t:"password"}],"Criar",async d=>{await api("POST","/revendedores",d);toast("Revendedor criado")});
+ $("#view").onclick=async e=>{const b=e.target.closest("[data-a]");if(!b)return;const i=b.dataset.i;
+  if(b.dataset.a==="cr")form("Ajustar créditos",[{n:"valor",l:"Quantidade (negativo remove)",t:"number"}],"Aplicar",async d=>{await api("POST",`/revendedores/${i}/creditos`,d);toast("Saldo atualizado")});
+  if(b.dataset.a==="pw")form("Nova senha",[{n:"senha",l:"Nova senha (mínimo 8)",t:"password"}],"Salvar",async d=>{await api("PUT","/revendedores/"+i,d);toast("Senha alterada")});
+  if(b.dataset.a==="at"){await api("PUT","/revendedores/"+i,{ativo:b.dataset.v!=="1"});render()}}},
+async mov(){const l=await api("GET","/movimentos");$("#view").innerHTML=`<h2>Movimentação de créditos</h2><div class="tw">${l.length?`<table><tr><th>Data</th>${me.papel==="admin"?"<th>Usuário</th>":""}<th>Descrição</th><th>Créditos</th></tr>${l.map(m=>`<tr><td>${esc(m.criado_em.slice(0,16))}</td>${me.papel==="admin"?`<td>${esc(m.usuario)}</td>`:""}<td>${esc(m.descricao)}</td><td style="color:${m.valor>0?"var(--ok)":"var(--ruim)"}">${m.valor>0?"+":""}${m.valor}</td></tr>`).join("")}</table>`:'<p class="vazio">Sem movimentações.</p>'}</div>`},
+async conta(){$("#view").innerHTML=`<h2>Conta</h2><div class="card"><p>Usuário: <b style="display:inline;font-size:inherit">${esc(me.usuario)}</b></p><button id="ps">Trocar senha</button></div>${me.papel==="admin"?`<h2 style="margin-top:20px">Integração Sigma</h2><div class="card"><p id="sg" class="vazio">Verificando…</p></div>`:""}`;
+ $("#ps").onclick=()=>form("Trocar senha",[{n:"atual",l:"Senha atual",t:"password"},{n:"nova",l:"Nova senha (mínimo 8)",t:"password"}],"Salvar",async d=>{await api("POST","/senha",d);toast("Senha alterada")});
+ if(me.papel==="admin")api("GET","/sigma/status").then(r=>$("#sg").innerHTML='<span class="tag t1">Conectado</span>').catch(e=>$("#sg").textContent=e.message)}};
+function lista(){const q=$("#q").value.toLowerCase(),f=+$("#fs").value,adm=me.papel==="admin";
+ const l=cache.cl.filter(c=>(!q||(c.nome+c.whatsapp+c.usuario_servico).toLowerCase().includes(q))&&(!f||status(c.vencimento)[1]===f));
+ $("#tb").innerHTML=l.length?`<table><tr><th>Cliente</th>${adm?"<th>Revendedor</th>":""}<th>Vencimento</th><th>Situação</th><th></th></tr>${l.map(c=>`<tr><td><b>${esc(c.nome)}</b><br><small style="color:var(--suave)">${esc(c.usuario_servico)} ${esc(c.whatsapp)}</small></td>${adm?`<td>${esc(c.revendedor)}</td>`:""}<td>${fdata(c.vencimento)}</td><td>${status(c.vencimento)[0]}</td><td class="acoes"><button class="sm" data-a="rn" data-i="${c.id}">Renovar</button>${c.whatsapp?`<a class="btn sm" target="_blank" rel="noopener" href="${wa(c)}">WhatsApp</a>`:""}<button class="sm" data-a="ed" data-i="${c.id}">Editar</button><button class="sm pe" data-a="ex" data-i="${c.id}">Excluir</button></td></tr>`).join("")}</table>`:'<p class="vazio">Nenhum cliente encontrado.</p>';
+ $("#tb").onclick=async e=>{const b=e.target.closest("[data-a]");if(!b)return;const c=cache.cl.find(x=>x.id==b.dataset.i);
+  if(b.dataset.a==="rn")form("Renovar "+c.nome,[{n:"meses",l:"Plano",opts:PL}],"Renovar",async d=>{const r=await api("POST",`/clientes/${c.id}/renovar`,d);toast("Novo vencimento: "+fdata(r.vencimento))});
+  if(b.dataset.a==="ed")form("Editar cliente",[{n:"nome",l:"Nome",v:c.nome},{n:"whatsapp",l:"WhatsApp",v:c.whatsapp,t:"tel"},{n:"usuario_servico",l:"Usuário do serviço",v:c.usuario_servico},{n:"obs",l:"Observação",v:c.obs,area:1}],"Salvar",async d=>{await api("PUT","/clientes/"+c.id,d);toast("Salvo")});
+  if(b.dataset.a==="ex"&&confirm("Excluir "+c.nome+"? Isto não pode ser desfeito.")){await api("DELETE","/clientes/"+c.id);toast("Cliente excluído");render()}}}
+function wa(c){let n=c.whatsapp.replace(/\D/g,"");if(n.length<=11)n="55"+n;const d=dias(c.vencimento);
+ const m=d<0?`Olá, ${c.nome}! Seu plano venceu em ${fdata(c.vencimento)}. Quer renovar?`:`Olá, ${c.nome}! Seu plano vence em ${fdata(c.vencimento)}. Posso renovar para você?`;return`https://wa.me/${n}?text=${encodeURIComponent(m)}`}
+const entrar=async()=>{$("#le").textContent="";try{await api("POST","/login",{usuario:$("#lu").value,senha:$("#lp").value});$("#lp").value="";boot()}catch(e){$("#le").textContent=e.message}};
+$("#lb").onclick=entrar;$("#lp").onkeydown=e=>{if(e.key==="Enter")entrar()};
+$("#so").onclick=async e=>{e.preventDefault();await api("POST","/logout",{});me=null;boot()};boot();
+</script></body></html>
